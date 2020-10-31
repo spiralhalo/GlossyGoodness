@@ -1,6 +1,6 @@
-# GlossyGoodness
+# Glossy Goodness
 
-Poor man's specular light shader for (Canvas)[https://github.com/grondag/canvas] renderer (a fabric minecraft).
+Poor man's specular light shader for [Canvas](https://github.com/grondag/canvas) renderer (a fabric minecraft).
 
 As is common with minecraft shaders, it works with sun light only. Block light does nothing.
 
