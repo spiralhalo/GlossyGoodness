@@ -23,13 +23,8 @@
 #include frex:shaders/lib/math.glsl
 #include frex:shaders/api/camera.glsl
 
-// CONST
-// #define CAMERA_AXIS     vec3(0,0,1);
-
 // Customizable
 #define STRENGTH      0.5
-// #define DELUMINATION  0.2
-// #define BLOOM_FACTOR    0.1
 
 varying vec3 rbv_modelPos;
 varying vec3 rbv_cameraPos;
@@ -53,13 +48,6 @@ void frx_startFragment(inout frx_FragmentData data)
     float spec = gg_specular(gg_skyDir(wt), norm, rbv_modelPos, rbv_cameraPos, lum);
     spec *= STRENGTH  * amb * sky;
 
-    // What ??
-    // spec -= DELUMINATION; 
-
     // Apply specular light I guess.
     data.spriteColor.rgb += vec3(spec);
-
-    // Everything that is shiny is also emissive in my world.
-    // Except actually not because it ended up looking bad.
-    // data.emissivity = spec * BLOOM_FACTOR;
 }
