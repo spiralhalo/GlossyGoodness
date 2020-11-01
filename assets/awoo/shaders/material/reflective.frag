@@ -28,7 +28,7 @@
 #define STRENGTH      0.5
 
 /******************************************************
-  awoo:shaders/material/reflective_block.frag
+  awoo:shaders/material/reflective.frag
 ******************************************************/
 
 void frx_startFragment(inout frx_FragmentData data) 

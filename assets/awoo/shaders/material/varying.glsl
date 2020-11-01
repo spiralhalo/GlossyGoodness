@@ -16,5 +16,9 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/******************************************************
+  awoo:shaders/material/varying.glsl
+******************************************************/
+
 varying vec3 rbv_modelPos;
 varying vec3 rbv_cameraPos;

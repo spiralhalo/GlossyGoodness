@@ -20,7 +20,7 @@
 #include awoo:shaders/material/varying.glsl
 
 /******************************************************
-  awoo:shaders/material/reflective_block.vert
+  awoo:shaders/material/reflective.vert
 ******************************************************/
 
 mat4 inv(mat4 m) {

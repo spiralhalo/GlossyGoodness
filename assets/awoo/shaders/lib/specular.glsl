@@ -16,6 +16,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/******************************************************
+  awoo:shaders/lib/specular.glsl
+******************************************************/
+
 float gg_specular(vec3 skyDir, vec3 fragNormal, vec3 modelPos, vec3 cameraPos, float luminance)
 {
    // Obtain the direction of the camera.

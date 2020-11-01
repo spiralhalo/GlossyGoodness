@@ -16,6 +16,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/******************************************************
+  awoo:shaders/lib/skydir.glsl
+******************************************************/
+
 #define M_2PI 6.283185307179586476925286766559
 
 // Direction from surface to the sky light source

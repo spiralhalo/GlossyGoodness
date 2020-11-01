@@ -16,6 +16,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+/******************************************************
+  awoo:shaders/lib/specular2.glsl
+******************************************************/
+
 // DEPRECATED
 // EXPERIMENTAL
 float gg_specular2(vec3 skyDir, vec3 fragNormal, vec3 fragScreenPos, vec3 cameraViewVector, float luminance)
