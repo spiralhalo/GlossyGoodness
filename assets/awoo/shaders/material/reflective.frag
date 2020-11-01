@@ -22,12 +22,10 @@
 #include frex:shaders/api/fragment.glsl
 #include frex:shaders/lib/math.glsl
 #include frex:shaders/api/camera.glsl
+#include awoo:shaders/material/varying.glsl
 
 // Customizable
 #define STRENGTH      0.5
-
-varying vec3 rbv_modelPos;
-varying vec3 rbv_cameraPos;
 
 /******************************************************
   awoo:shaders/material/reflective_block.frag
