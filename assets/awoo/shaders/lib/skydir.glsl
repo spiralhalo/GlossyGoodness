@@ -22,5 +22,5 @@
 
 vec3 gg_sunDir(float worldTime){
     float aRad = worldTime * M_2PI;
-    return normalize(vec3(cos(aRad), (worldTime>=0.5?-1:1)*sin(aRad), 0));
+    return vec3(cos(aRad), sin(aRad), 0);
 }

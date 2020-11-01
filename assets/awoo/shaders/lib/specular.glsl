@@ -25,6 +25,6 @@ float gg_specular(vec3 skyDir, vec3 fragNormal, vec3 modelPos, vec3 cameraPos, f
    float power = pow(luminance,1.5) * 20;
 
    // Calculate the specular light.
-   return dot(skyDir, fragNormal)<0?0:max(0.0, pow(dot(reflect(-skyDir, fragNormal), viewDir),power));
+   return max(0.0, pow(dot(reflect(-skyDir, fragNormal), viewDir),power));
 
 }
