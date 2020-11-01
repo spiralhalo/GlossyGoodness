@@ -16,11 +16,17 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#define M_2PI 6.283185307179586476925286766559
+#include frex:shaders/api/vertex.glsl
 
-// Direction from surface to the sky light source
+varying vec3 rbv_modelPos;
+varying vec3 rbv_cameraPos;
 
-vec3 gg_sunDir(float worldTime){
-    float aRad = worldTime * M_2PI;
-    return normalize(vec3(cos(aRad), (worldTime>=0.5?-1:1)*sin(aRad), 0));
+/******************************************************
+  awoo:shaders/material/reflective_block.vert
+******************************************************/
+
+void frx_startVertex(inout frx_VertexData data)
+{
+    rbv_modelPos = data.vertex.xyz + frx_modelOriginWorldPos();
+    rbv_cameraPos = frx_modelOriginWorldPos();
 }

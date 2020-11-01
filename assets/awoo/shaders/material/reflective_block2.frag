@@ -44,7 +44,7 @@ void frx_startFragment(inout frx_FragmentData data)
     vec3 norm = data.vertexNormal* frx_normalModelMatrix();
 
     // Obtain the normal of the sun (?)
-    vec3 skyNorm = gg_skyDir(wt);
+    vec3 skyNorm = gg_sunDir(wt);
 
     // Calculate the specular light.
     float spec = gg_specular2(skyNorm, norm, rbv_fragScreenPos, frx_cameraView(), lum);

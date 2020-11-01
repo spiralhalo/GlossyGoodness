@@ -1,0 +1,4 @@
+{
+    "vertexSource": "awoo:shaders/material/reflective_entity.vert",
+    "fragmentSource": "awoo:shaders/material/reflective.frag"
+}
