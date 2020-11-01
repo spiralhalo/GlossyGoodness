@@ -16,15 +16,15 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
- float gg_specular(vec3 skyDir, vec3 fragNormal, vec3 modelPos, vec3 cameraPos, float luminance)
- {
-    // Obtain the direction of the camera.
-    vec3 viewDir = normalize(cameraPos - modelPos);
+float gg_specular(vec3 skyDir, vec3 fragNormal, vec3 modelPos, vec3 cameraPos, float luminance)
+{
+   // Obtain the direction of the camera.
+   vec3 viewDir = normalize(cameraPos - modelPos);
 
-    // Calculate specular power based on luminance to give a sense of roughness on darker material.
-    float power = pow(luminance,1.5) * 20;
+   // Calculate specular power based on luminance to give a sense of roughness on darker material.
+   float power = pow(luminance,1.5) * 20;
 
-    // Calculate the specular light.
-    return dot(skyDir, fragNormal)<0?0:max(0.0, pow(dot(reflect(-skyDir, fragNormal), viewDir),power));
+   // Calculate the specular light.
+   return dot(skyDir, fragNormal)<0?0:max(0.0, pow(dot(reflect(-skyDir, fragNormal), viewDir),power));
 
- }
+}

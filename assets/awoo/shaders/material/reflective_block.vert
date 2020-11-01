@@ -20,6 +20,7 @@
 
 varying vec3 rbv_modelPos;
 varying vec3 rbv_cameraPos;
+varying vec3 rbv_fragScreenPos;
 
 /******************************************************
   awoo:shaders/material/reflective_block.vert
@@ -71,5 +72,10 @@ void frx_startVertex(inout frx_VertexData data)
     rbv_modelPos = data.vertex.xyz + frx_modelOriginWorldPos();
 
     // Highly illegal operation
-    rbv_cameraPos = (inv(gl_ModelViewMatrix) * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
+    rbv_cameraPos = (inv(mat4(gl_ModelViewMatrix)) * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
+}
+
+void frx_endVertex(inout frx_VertexData data)
+{
+    rbv_fragScreenPos = data.vertex.xyz;
 }
