@@ -35,6 +35,7 @@ varying vec3 rbv_cameraPos;
 
 void frx_startFragment(inout frx_FragmentData data) 
 {
+  if(frx_worldHasSkylight()){
     // This comment pretends to explain things to you but why would it? No one reads my code.
     float wt = frx_worldTime();
     float amb = frx_ambientIntensity();
@@ -50,4 +51,5 @@ void frx_startFragment(inout frx_FragmentData data)
 
     // Apply specular light I guess.
     data.spriteColor.rgb += vec3(spec);
+  }
 }
