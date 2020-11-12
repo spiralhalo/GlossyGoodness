@@ -66,7 +66,7 @@ mat4 inv(mat4 m) {
 
 void frx_startVertex(inout frx_VertexData data)
 {
-    rbv_modelPos = data.vertex.xyz + frx_modelOriginWorldPos();
+    rbv_modelPos = data.vertex.xyz;
 
     // Highly illegal operation
     rbv_cameraPos = (inv(mat4(gl_ModelViewMatrix)) * vec4(0.0, 0.0, 0.0, 1.0)).xyz;
