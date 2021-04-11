@@ -41,7 +41,7 @@ jobs:
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
-            name: Release ${{ steps.tag_version.outputs.new_tag }}
+            name: THIS IS A TEST Release ${{ steps.tag_version.outputs.new_tag }}
             body: ${{ steps.tag_version.outputs.changelog }}
             tag: ${{ steps.tag_version.outputs.new_tag }}
             artifacts: "GG-${{ steps.tag_version.outputs.new_tag }}.zip"
