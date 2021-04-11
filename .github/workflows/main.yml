@@ -22,32 +22,32 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-    
+
       - name: Bump version and push tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v5.4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           custom_tag: ${{ github.event.inputs.version }}
-             
+
       - name: Bump pack.mcmeta version
         uses: jacobtomlinson/gha-find-replace@0.1.2
         with:
           include: pack.mcmeta
           find: '{VERSION_TAG}'
-          replace: '${{ github.event.inputs.version }}'
-    
+          replace: '${{ steps.tag_version.outputs.new_tag }}'
+
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
           filename: 'GG-${{ steps.tag_version.outputs.new_tag }}.zip'
           exclusions: '*.git* *.yml'
-          
+
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
             name: THIS IS A TEST Release ${{ steps.tag_version.outputs.new_tag }}
             body: ${{ steps.tag_version.outputs.changelog }}
-            tag: ${{ github.event.inputs.version }}
+            tag: ${{ steps.tag_version.outputs.new_tag }}
             artifacts: "GG-${{ steps.tag_version.outputs.new_tag }}.zip"
             token: ${{ secrets.GITHUB_TOKEN }}
